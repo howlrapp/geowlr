@@ -1,0 +1,2 @@
+class Region < Geometry
+end

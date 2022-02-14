@@ -1,0 +1,2 @@
+class Empire < Geometry
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_02_102002) do
+ActiveRecord::Schema.define(version: 2022_02_20_091558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,12 @@ ActiveRecord::Schema.define(version: 2020_10_02_102002) do
     t.geometry "geom", limit: {:srid=>4326, :type=>"multi_polygon"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type", default: "Locality", null: false
     t.string "cached_name"
     t.jsonb "cached_hierarchy", default: {}
     t.index "to_tsvector('english'::regconfig, cached_hierarchy)", name: "index_geometries_on_cached_hierarchy", using: :gist
     t.index ["geom"], name: "index_geometries_on_geom", using: :gist
     t.index ["lonlat"], name: "index_geometries_on_lonlat", using: :gist
     t.index ["reference"], name: "index_geometries_on_reference"
-    t.index ["type"], name: "index_geometries_on_type"
   end
 
 end

@@ -1,2 +1,0 @@
-class Empire < Geometry
-end

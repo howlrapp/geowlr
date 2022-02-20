@@ -14,12 +14,11 @@ First create the database:
 bin/rake db:create
 ```
 
-You can find a dump of our data here: https://drive.google.com/file/d/1YqUnerwGOAzl1aefyEALF-FNMaHtVjLl/view?usp=sharing
-
+You can find a dump of our data here: https://drive.google.com/file/d/1IQiYrnpwZxAbyG0DhMUZPaLMZKBMyq1Y/view?usp=sharing
 Once it's downloaded you can restore it with:
 
 ```
-pg_restore --clean --no-acl --no-owner -d geowlr_development < ./geowlr.dump
+pg_restore -d geowlr_development -t geometries ~/geowlr.dump
 ```
 
 ## API
